@@ -44,6 +44,6 @@ def test_browser_submit():
         browser.element('//table/tbody/tr[9]/td[2]').should(have.text('Saint-Petersburg, Lensoveta street, 53'))
         browser.element('//table/tbody/tr[10]/td[2]').should(have.text('NCR Gurgaon'))
 
-    attach.add_html(browser)
-    attach.add_logs(browser)
-    attach.add_screenshot(browser)
+    #attach.add_html(browser)
+    #attach.add_logs(browser)
+    #attach.add_screenshot(browser)
