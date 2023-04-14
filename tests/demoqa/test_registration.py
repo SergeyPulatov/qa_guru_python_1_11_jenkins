@@ -3,7 +3,7 @@ import os
 import allure
 from selene import browser, have, command
 
-from util import attach
+from utils import attach
 
 
 @allure.title('Suc')
