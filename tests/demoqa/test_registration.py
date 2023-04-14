@@ -3,7 +3,8 @@ import os
 import allure
 from selene import browser, have, command
 
-from util import attach
+from tests.util import attach
+
 
 @allure.title('Suc')
 def test_browser_submit():
@@ -44,6 +45,6 @@ def test_browser_submit():
         browser.element('//table/tbody/tr[9]/td[2]').should(have.text('Saint-Petersburg, Lensoveta street, 53'))
         browser.element('//table/tbody/tr[10]/td[2]').should(have.text('NCR Gurgaon'))
 
-    #attach.add_html(browser)
-    #attach.add_logs(browser)
-    #attach.add_screenshot(browser)
+attach.add_html(browser)
+attach.add_logs(browser)
+attach.add_screenshot(browser)
