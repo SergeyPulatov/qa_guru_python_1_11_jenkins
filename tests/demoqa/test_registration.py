@@ -1,13 +1,33 @@
 import os
-
+from selenium import webdriver
 import allure
 from selene import browser, have, command
+from selenium.webdriver.chrome.options import Options
 
 from utils import attach
 
 
 @allure.title('Suc')
 def test_browser_submit():
+
+    options = Options()
+    selenoid_capabilities = {
+        "browserName": "chrome",
+        "browserVersion": "100.0",
+        "selenoid:options": {
+            "enableVNC": True,
+            "enableVideo": False
+        }
+    }
+    options.capabilities.update(selenoid_capabilities)
+
+    driver = webdriver.Remote(
+        command_executor="https://user1:1234@selenoid.autotests.cloud/wd/hub",
+        options=options)
+
+    browser.config.driver = driver
+
+
     with allure.step('Open URL'):
         browser.open_url('https://demoqa.com/automation-practice-form')
 
